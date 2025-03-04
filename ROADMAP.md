@@ -4,7 +4,7 @@ This document outlines the planned development roadmap for the Online Shop proje
 
 ## Q1 2024 (January - March)
 
-### DevOps
+## DevOps
 
 - [ ] Docker
   - Create a Dockerfile for the Application:
