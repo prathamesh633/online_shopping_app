@@ -1,22 +1,12 @@
-version: "3.8"
-
 services:
-
-  online_shop:
-    build:
-      context: .
-    container_name: online_shop
-    ports:
-      - "5173:5173"
-    restart: always
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
-      interval: 60s
-      timeout: 10s
-      retries: 5
-    networks:
-      - online_shop
+  online_shop:     # We mention / map the container here.
+   build:          # We are building dockerfile so we using 'build'.
+     context: .    # Here we specifying where our dockerfile is present to build the image.
+   container_name: online_shop  # We are giving name to our container.
+   ports:
+     - 5173:5173 # We are mapping port 5173 of our container to port 5173 of our host.
+   networks:
+     - new-net   # making the container in the network we created. 
 
 networks:
-  online_shop:
-    driver: bridge
+  new-net:    # When we create our own network we have to mention it in the compose file.
